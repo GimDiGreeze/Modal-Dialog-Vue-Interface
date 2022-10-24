@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modal window testing</title>
+  <script type="text/javascript" src="/js/local_vue.js"></script>
+<style>
+  .magic-red{
+    color: #F00;
+  }
+  .shadow{
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #444;
+    opacity: .5;
+  }
+  .dialog-body{
+    position: absolute;
+    z-index: 1001;
+    top: 35%;
+    height: 30%;
+    left: 25%;
+    width: 50%;
+    background-color: #FFF;
+    color: #000;
+    border-radius: 10px;
+    border: solid 1px #999;
+    padding: 20px 30px;
+  }
+  .nycp-input label{
+    margin-right: 20px;
+  }
+  input.error{
+    color: #F00;
+  }
+  input.changed{
+    background-color: #CCC;
+  }
+</style>
+
+</head>
+<body>
+<h1>Single component with modal window. Made with modules.</h1>
+<div id="root-app">
+  <!--<single-component></single-component>-->
+  <s_c></s_c>
+</div>
+
+<script type="module">
+
+import {
+  males,
+  females,
+  items,
+  nycpDialog,
+  single_component,
+} from '/js/tc_module.js';
+
+var app = new Vue({
+  el: '#root-app',
+  data: {
+    males: males,
+    females: females,
+  },
+  components: {s_c: single_component}
+})
+
+</script>
+
+</body>
+</html>
